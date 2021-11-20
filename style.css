@@ -1,0 +1,352 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: transform 0.4s ease;
+    font-family: 'Gloria Hallelujah', cursive;
+    /* font-family: 'Luckiest Guy', cursive; */
+}
+
+*::selection{
+    color: #17f1d4;
+    background-color: transparent;
+}
+
+h1::selection{
+    color: #17fa17;
+    background-color: transparent;
+}
+
+p::selection{
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+}
+
+header {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    display: flex;
+}
+
+.nav {
+    position: absolute;
+    right: 8%;
+    font-size: 140%;
+    display: flex;
+    align-items: center;
+    width: 25em;
+    justify-content: flex-end;
+    height: 12%;
+}
+
+nav:not(.active) {
+    display: flex;
+    align-items: center;
+    transition: all 0.9s linear;
+    width: 20%;
+    opacity: 0;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style-type: none;
+    transform: rotateY(0deg);
+    transition: all 0.9s linear;
+}
+
+nav.active {
+    width: 120%;
+    transition: all 0.9s linear;
+}
+
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+nav a {
+    padding: 0 0.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.inner-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.head {
+    padding-left: 100%;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: content-box;
+    position: absolute;
+}
+
+.head-inner {
+    display: inline-block;
+    padding-right: 100%;
+    box-sizing: content-box;
+}
+
+.head-inner h1 {
+    white-space: nowrap;
+    font-size: 9vw;
+    transform: translate(-66.2867%, 0%) translate3d(0px, 0px, 0px);
+    transition: all 0.06s  ease;
+}
+
+.about {
+    height: 60%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20em;
+    align-items: center;
+}
+
+.about div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+    width: 70%;
+}
+
+.about img {
+    height: 50%;
+}
+
+.burger {
+    color: rgb(250, 186, 48);
+    border: none;
+    background: none;
+    padding-left: 1em;
+    cursor: pointer;
+    position: absolute;
+    right: 6%;
+    top: 2%;
+    outline: none;
+}
+
+svg {
+    width: 6em;
+    height: 11em;
+}
+
+.burger:hover #first {
+    transform: translate(0, -30%);
+}
+
+.burger:hover #second {
+    transform: translate(0, -15%);
+}
+
+.burger:hover #third {
+    transform: translate(0, -5%);
+}
+
+.burger:hover #fourth {
+    transform: translate(0, 35%);
+}
+
+.burger:hover #red {
+    transform: translate(0, 25%);
+}
+
+.burger:hover #green {
+    transform: translate(0, 10%);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#section1 .fp-bg{
+    background-image: url('imgs/alvaro-genious.jpg');
+    background-size: cover;
+    background-position: center 80%;
+}
+
+.series {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: all 0.6s ease;
+}
+
+.series::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.series h2 {
+    position: absolute;
+    bottom: 3%;
+    font-size: 230%;
+    color: thistle;
+    z-index: 3;
+}
+
+.container {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    height: 74vh;
+    width: 74vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.container p {
+    font-size: 200%;
+    color: white;
+    position: absolute;
+    top: 14%;
+    right: 15.2%;
+}
+
+.slide {
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    background-size: 100% 100%;
+    position: absolute;
+    top: -13.1vh;
+    left: -13vw;
+    z-index: 1;
+    transition: all 0.6s ease;
+
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.arrow {
+    position: fixed;
+    z-index: 11;
+    background: none;
+    font-size: 300%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.left{
+    left: calc(12.5vw - 65px);
+}
+
+.right{
+    right: calc(12.5vw - 65px);
+}
+
+.slider-cars {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-slide {
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform .7s ease;
+}
+
+.left-slide > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.left-slide h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    padding: 0 55px;
+    text-align: center;
+}
+
+.right-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 75%;
+    transition: transform .7s ease;
+}
+
+.right-slide > div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.slider-cars .buttons button{
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    z-index: 12;
+}
+
+.slider-cars .buttons button {
+    background: #acb0af;
+    border: none;
+    /* color: rgb(68, 228, 28); */
+    color: white;
+    font-size: 1.5em;
+    padding: 15px 25px;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+.slider-cars .buttons .down-button {
+    transform: translateX(-100%);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.slider-cars .buttons .up-button {
+    transform: translateY(-100%);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.cars-header {
+    position: absolute;
+    z-index: 123;
+    right: 10%;
+    top: 3%;
+    font-size: 1.8em;
+}
